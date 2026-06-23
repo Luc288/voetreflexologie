@@ -1,0 +1,42 @@
+baseURL = "https://www.hand-en-voetreflexologie.be/"
+locale = "nl-be"
+title = "Voetreflexologie Martine Smet"
+disableKinds = ["taxonomy", "term", "RSS"]
+enableRobotsTXT = true
+
+[params]
+  author = "Martine Smet"
+  phone = "0498 41 60 80"
+  phoneLink = "tel:0498416080"
+  phoneIntl = "+32498416080"
+  email = "info@hand-en-voetreflexologie.be"
+  street = "Baron Leroystraat 144"
+  city = "2100 Deurne, Antwerpen"
+  ogLocale = "nl_BE"
+
+# Hoofdnavigatie
+[[menu.main]]
+  name = "Voetreflexologie"
+  pageRef = "/"
+  weight = 1
+[[menu.main]]
+  name = "Aanbod"
+  pageRef = "/aanbod"
+  weight = 2
+[[menu.main]]
+  name = "Over Martine"
+  pageRef = "/over"
+  weight = 3
+[[menu.main]]
+  name = "Cursussen"
+  pageRef = "/cursussen"
+  weight = 4
+[[menu.main]]
+  name = "Afspraak maken"
+  pageRef = "/contact"
+  weight = 5
+  [menu.main.params]
+    button = true
+
+[markup.goldmark.renderer]
+  unsafe = true

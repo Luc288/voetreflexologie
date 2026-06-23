@@ -1,0 +1,47 @@
+{{ define "head" }}
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "FAQPage",
+"mainEntity": [
+{{ range $i, $f := hugo.Data.faq }}{{ if $i }},{{ end }}
+{
+"@type": "Question",
+"name": {{ $f.vraag | plainify | jsonify }},
+"acceptedAnswer": { "@type": "Answer", "text": {{ $f.antwoord | plainify | jsonify }} }
+}
+{{ end }}
+]
+}
+</script>
+{{ end }}
+
+{{ define "main" }}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="{{ "/" | relLangURL }}">Home</a> &rsaquo; Veelgestelde vragen</p>
+    <p class="eyebrow">Veelgestelde vragen</p>
+    <h1>Goed om <em>vooraf</em> te weten</h1>
+    <p class="lead">Een aantal vragen die vaak terugkomen over voetreflexologie en het verloop van een afspraak. Staat jouw vraag er niet bij? Bel of mail gerust.</p>
+  </div>
+</section>
+
+<section style="padding-top:50px">
+  <div class="wrap" style="max-width:820px">
+    {{ range hugo.Data.faq }}
+    <details class="faq-item">
+      <summary>{{ .vraag | safeHTML }}</summary>
+      <div class="faq-body">{{ .antwoord | safeHTML }}{{ with .note }}<p class="faq-note">{{ . | safeHTML }}</p>{{ end }}</div>
+    </details>
+    {{ end }}
+  </div>
+</section>
+
+{{ partial "cta.html" (dict
+  "eyebrow" "Nog een vraag?"
+  "title" "Stel ze gerust"
+  "text" "Vind je het antwoord hier niet? Neem vrijblijvend contact op &mdash; ik help je graag verder."
+  "btnText" "Contact opnemen"
+  "btnHref" ("/contact" | relLangURL)
+) }}
+{{ end }}

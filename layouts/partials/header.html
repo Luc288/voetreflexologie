@@ -1,0 +1,21 @@
+<header>
+  <div class="nav">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <b>Martine Smet</b>
+      <span>Voetreflexologie &middot; Deurne</span>
+    </a>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu openen" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="site-nav">
+      <ul>
+        {{ $page := . }}
+        {{ range .Site.Menus.main }}
+          {{ $active := or ($page.IsMenuCurrent "main" .) (eq $page.RelPermalink .PageRef) }}
+          {{ if and $page.IsHome (eq .PageRef "/") }}{{ $active = true }}{{ end }}
+          <li><a href="{{ .PageRef | relLangURL }}" class="{{ if .Params.button }}btn{{ else if $active }}active{{ end }}">{{ .Name }}</a></li>
+        {{ end }}
+      </ul>
+    </nav>
+  </div>
+</header>

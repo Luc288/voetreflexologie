@@ -1,0 +1,61 @@
+{{ define "head" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "Voetreflexologie Martine Smet",
+  "address": {"@type":"PostalAddress","streetAddress":"Baron Leroystraat 144","addressLocality":"Deurne","postalCode":"2100","addressCountry":"BE"},
+  "geo": {"@type":"GeoCoordinates","latitude":51.2256551,"longitude":4.4723453},
+  "telephone": "+32498416080",
+  "email": "info@hand-en-voetreflexologie.be",
+  "url": "https://www.hand-en-voetreflexologie.be/contact/"
+}
+</script>
+{{ end }}
+
+{{ define "main" }}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="{{ "/" | relLangURL }}">Home</a> &rsaquo; Contact</p>
+    <p class="eyebrow">Contact &middot; consultatie steeds op afspraak</p>
+    <h1>Maak je <em>afspraak</em> in Deurne</h1>
+    <p class="lead">Neem vrijblijvend contact op &mdash; ik sta je graag te woord. Een behandeling begint altijd met een korte kennismaking.</p>
+  </div>
+</section>
+
+<section style="padding-top:50px">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="info-row">
+        <div class="ic">&#9742;</div>
+        <div><h4>Telefoon</h4><a href="{{ .Site.Params.phoneLink }}">{{ .Site.Params.phone }}</a></div>
+      </div>
+      <div class="info-row">
+        <div class="ic">&#9993;</div>
+        <div><h4>E-mail</h4><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></div>
+      </div>
+      <div class="info-row">
+        <div class="ic">&#9873;</div>
+        <div><h4>Adres</h4><p>Baron Leroystraat 144<br>2100 Deurne, Antwerpen</p>
+        <a href="https://www.google.be/maps/place/Baron+Leroystraat+144,+2100+Antwerpen/@51.2256584,4.4701566,17z" target="_blank" rel="noopener" style="color:var(--clay-deep);font-size:.92rem">Open in Google Maps &rarr;</a></div>
+      </div>
+      <div class="info-row">
+        <div class="ic">&#9201;</div>
+        <div><h4>Afspraken</h4><p>Consultatie steeds op afspraak. Bel of mail om een moment te plannen.</p></div>
+      </div>
+      <div class="note"><b>Parkeren.</b> In de buurt geldt betalend parkeren. De eerste twee uren zijn gratis, daarna 50 cent/uur met een maximum van 2,50 euro per dag. Registreren is altijd nodig, ook voor de eerste twee gratis uren.</div>
+    </div>
+    <div class="map-embed">
+      <iframe loading="lazy" title="Locatie Voetreflexologie Martine Smet, Baron Leroystraat 144, Deurne" src="https://www.google.com/maps?q=Baron+Leroystraat+144,+2100+Deurne&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+{{ partial "cta.html" (dict
+  "eyebrow" "Liever telefonisch?"
+  "title" "Bel gerust"
+  "text" "Ik beantwoord je vragen graag en kijk samen met jou wanneer een afspraak past."
+  "btnText" .Site.Params.phone
+  "btnHref" .Site.Params.phoneLink
+) }}
+{{ end }}

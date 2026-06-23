@@ -1,0 +1,43 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="{{ "/" | relLangURL }}">Home</a> &rsaquo; Over Martine</p>
+    <p class="eyebrow">Over Martine Smet</p>
+    <h1>Werken vanuit <em>aandacht</em> en aanwezigheid</h1>
+    <p class="lead">Al meer dan 25 jaar begeleid ik mensen met voetreflexologie in Deurne. Een korte kennismaking met mijn weg en mijn manier van werken.</p>
+  </div>
+</section>
+
+<section style="padding-top:50px">
+  <div class="wrap over-grid">
+    <div class="over-photo"></div>
+    <div class="prose">
+      <p>In 1995 begon ik aan een nieuw hoofdstuk als professionele voetverzorgster. Enkele jaren later bracht een persoonlijke zoektocht me in contact met voetreflexologie &mdash; een ervaring die mijn leven en mijn werk diepgaand veranderde.</p>
+      <p>Gefascineerd door de kracht van reflexologie volgde ik een tweejarige opleiding aan het Oost West Centrum, die de basis vormde voor mijn verdere groei en specialisatie.</p>
+      <p>Doorheen de jaren verdiepte ik me in technieken die lichaam en psyche op een zachte, holistische manier ondersteunen. Elke methode biedt unieke mogelijkheden om spanning los te laten, balans te herstellen en het zelfhelend vermogen te activeren.</p>
+
+      <h2>Mijn specialisaties</h2>
+      <ul class="spec-list">
+        <li><b>Causale voetreflexologie</b> &mdash; legt de link tussen emotionele hersenzones en de organen.</li>
+        <li><b>Egyptische voetmassage</b> &mdash; met wisselbaden en een diepe doorstroming.</li>
+        <li><b>Psychozone harmonisering</b> &mdash; voor emotionele en psychische ondersteuning.</li>
+        <li><b>Metamorfosemassage</b> &mdash; zachte techniek op voeten, handen en hoofd.</li>
+        <li><b>Seiki</b> &mdash; werken vanuit aanwezigheid en minimale handeling.</li>
+      </ul>
+
+      <h2>Doen zonder doen</h2>
+      <p>Ik geloof sterk in behandelen vanuit 'doen zonder doen': aanwezig zijn, ruimte cre&euml;ren en het lichaam laten spreken. Zo ontstaat er beweging, ontspanning en groei op het moment dat het nodig is.</p>
+      <p>Als lid van BeVo, de beroepsvereniging van reflexologen in Belgi&euml;, blijf ik me voortdurend bijscholen om mijn cli&euml;nten de best mogelijke begeleiding te bieden.</p>
+      <span class="badge-inline">&#11041; Lid van BeVo &mdash; Beroepsvereniging van Reflexologen Belgi&euml;</span>
+    </div>
+  </div>
+</section>
+
+{{ partial "cta.html" (dict
+  "eyebrow" "Even kennismaken?"
+  "title" "Je bent welkom"
+  "text" "Een afspraak begint altijd met een gesprek. Heb je vragen, bel dan gerust &mdash; helemaal vrijblijvend."
+  "btnText" "Contact opnemen"
+  "btnHref" ("/contact" | relLangURL)
+) }}
+{{ end }}

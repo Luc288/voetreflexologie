@@ -1,0 +1,9 @@
+{{/* Verwacht een dict: eyebrow, title, text, btnText, btnHref */}}
+<section class="cta">
+  <div class="wrap">
+    <p class="eyebrow" style="color:rgba(255,255,255,.85)">{{ .eyebrow | safeHTML }}</p>
+    <h2>{{ .title | safeHTML }}</h2>
+    <p>{{ .text | safeHTML }}</p>
+    <a href="{{ .btnHref }}" class="btn">{{ .btnText | safeHTML }}</a>
+  </div>
+</section>

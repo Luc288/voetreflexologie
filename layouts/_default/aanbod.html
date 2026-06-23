@@ -1,0 +1,89 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="{{ "/" | relLangURL }}">Home</a> &rsaquo; Aanbod</p>
+    <p class="eyebrow">Aanbod &middot; Deurne, Antwerpen</p>
+    <h1>Behandelingen &amp; <em>technieken</em></h1>
+    <p class="lead">Van diepgaande causale voetreflexologie tot zachte, ondersteunende technieken. Elke sessie start met aandacht voor de hele mens &mdash; nooit alleen het symptoom.</p>
+  </div>
+</section>
+
+<section style="padding-top:30px">
+  <div class="wrap">
+
+    <div class="feature">
+      <div class="feature-visual"><span>01</span></div>
+      <div>
+        <span class="feature-num">01 &mdash; HOLISTISCH &amp; DIEPGAAND</span>
+        <h2>Causale voetreflexologie</h2>
+        <p>Bij causale voetreflexologie sporen we bewegingsverlies van organen op en herstellen dat. Factoren zoals emoties, shock, voeding, operaties en littekens kunnen dat verlies veroorzaken en ook naburige organen be&iuml;nvloeden.</p>
+        <p>Wat deze techniek uniek maakt, is de koppeling tussen de emotionele zones in de hersenen en de organen. Dat holistische perspectief zorgt voor een diepgaande, doeltreffende behandeling. Elke sessie start met een uitgebreide anamnese en gaat alleen door wanneer er geen contra-indicaties zijn.</p>
+        <div class="meta"><b>Anamnese vooraf</b><b>Oorzaakgericht</b></div>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feature-visual"><span>02</span></div>
+      <div>
+        <span class="feature-num">02 &mdash; &plusmn;2 UUR &middot; ONTSPANNEND</span>
+        <h2>Egyptische voetmassage</h2>
+        <p>Een uitgebreide sessie van ongeveer twee uur met wisselbaden (voetbaden) en een massage van het volledige onderbeen. Ze zorgt voor een sterke doorstroming in de onderbenen, maakt het bekken los en geeft een diepe aarding.</p>
+        <p>De Egyptenaren gebruikten deze massagevorm bij de priesters, vlak voor zij in de tempels gingen mediteren.</p>
+        <div class="meta"><b>Wisselbaden</b><b>Diepe aarding</b></div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-visual"><span>03</span></div>
+      <div>
+        <span class="feature-num">03 &mdash; EMOTIONEEL &middot; ZACHT</span>
+        <h2>Psychozone Harmonisering</h2>
+        <p>Deze techniek, oorspronkelijk ontwikkeld door een Chinese arts en verder verfijnd door Katrien Hendrickx, is een zachte, ondersteunende aanpak bij psychische en emotionele klachten: verslavingen, depressie, burn-out, stress, onzekerheid, angst, contactmoeilijkheden en overgangsklachten.</p>
+        <p>Enkele acupressuurpunten worden gecombineerd met reflexologie. De diepe ontspanning die ontstaat, maakt regeneratie mogelijk.</p>
+        <div class="meta"><b>Acupressuur</b><b>Burn-out &amp; stress</b></div>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feature-visual"><span>04</span></div>
+      <div>
+        <span class="feature-num">04 &mdash; SPIRITUELE GROEI</span>
+        <h2>Metamorfosemassage</h2>
+        <p>Een techniek ontwikkeld door Robert Johnson: een zachte behandeling op de wervelkolomzones van voeten, handen en hoofd. Ze nodigt uit tot heling en spirituele groei &mdash; de ontwikkeling van rups naar vlinder.</p>
+        <p>Net als bij Psychozone Harmonisering en Sarafijn werken we hier vanuit 'doen zonder doen': aanwezig behandelen zonder vooropgesteld doel, zodat het bewustzijn ruimte krijgt om te evolueren naar wat er op dat moment nodig is.</p>
+        <div class="meta"><b>Voeten, handen &amp; hoofd</b><b>Doen zonder doen</b></div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="feature-visual"><span>05</span></div>
+      <div>
+        <span class="feature-num">05 &mdash; COACHING &middot; CHAKRA'S</span>
+        <h2>Sarafijn</h2>
+        <p>Sarafijn werd opgestart door Heinrike Bergmans en combineert reflexologie met coaching. Het is een zeer zachte sessie die werkt op de chakra's en het spirituele kanaal.</p>
+        <div class="meta"><b>Reflexologie + coaching</b><b>Zeer zacht</b></div>
+      </div>
+    </div>
+
+    <div class="feature reverse">
+      <div class="feature-visual"><span>06</span></div>
+      <div>
+        <span class="feature-num">06 &mdash; AANWEZIGHEID</span>
+        <h2>Seiki Soho</h2>
+        <p>Seiki, doorgegeven door Kishi Akinobu uit Japan, streeft naar een maximaal effect met een minimum aan handeling. Door volledig aanwezig te zijn in het moment ontplooit het lichaam zich en kunnen blokkades loslaten.</p>
+        <p>De cli&euml;nt mag er volledig zijn; in de ruimte die zo ontstaat, kan beweging op gang komen. Soms is alleen aanwezig zijn, zonder iets te doen, het meest krachtige wat er is.</p>
+        <div class="meta"><b>Minimale handeling</b><b>Maximaal effect</b></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{{ partial "cta.html" (dict
+  "eyebrow" "Een vraag over een behandeling?"
+  "title" "We kijken samen wat past"
+  "text" "Twijfel je welke techniek het meest geschikt is? Bel gerust of kom langs &mdash; tijdens de anamnese voelen we samen wat je lichaam op dit moment nodig heeft."
+  "btnText" "Een afspraak maken"
+  "btnHref" ("/contact" | relLangURL)
+) }}
+{{ end }}

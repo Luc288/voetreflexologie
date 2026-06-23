@@ -1,0 +1,32 @@
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>Voetreflexologie Martine Smet</h4>
+        <p style="font-size:.94rem;max-width:34ch;color:#a8a499">Holistische voetreflexologie in Deurne, Antwerpen. Ontspan, herstel en activeer je zelfhelend vermogen.</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="{{ .Site.Params.phoneLink }}">{{ .Site.Params.phone }}</a></li>
+          <li><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
+          <li>{{ .Site.Params.street }}<br>{{ .Site.Params.city }}</li>
+        </ul>
+      </div>
+      <div>
+        <h5>Menu</h5>
+        <ul>
+          <li><a href="{{ "/aanbod" | relLangURL }}">Behandelingen</a></li>
+          <li><a href="{{ "/over" | relLangURL }}">Over Martine</a></li>
+          <li><a href="{{ "/cursussen" | relLangURL }}">Cursussen &amp; workshops</a></li>
+          <li><a href="{{ "/faq" | relLangURL }}">Veelgestelde vragen</a></li>
+          <li><a href="{{ "/contact" | relLangURL }}">Contact &amp; afspraak</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>&copy; {{ now.Year }} Voetreflexologie Martine Smet</span>
+      <span>Gebruiksovereenkomst &middot; Privacybeleid</span>
+    </div>
+  </div>
+</footer>
