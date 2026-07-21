@@ -8,9 +8,9 @@
       <div>
         <h5>Contact</h5>
         <ul>
-          <li><a href="{{ .Site.Params.phoneLink }}">{{ .Site.Params.phone }}</a></li>
+          <li><a href="{{ .Site.Params.phoneLink | safeURL }}">{{ .Site.Params.phone }}</a></li>
           <li><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></li>
-          <li>{{ .Site.Params.street }}<br>{{ .Site.Params.city }}</li>
+          <li>{{ .Site.Params.street }}<br>{{ .Site.Params.postalCode }} {{ .Site.Params.locality }}, {{ .Site.Params.region }}</li>
         </ul>
       </div>
       <div>
@@ -26,7 +26,7 @@
     </div>
     <div class="foot-bot">
       <span>&copy; {{ now.Year }} Voetreflexologie Martine Smet</span>
-      <span>Gebruiksovereenkomst &middot; Privacybeleid</span>
+      <span>Gebruiksovereenkomst &middot; Privacybeleid &middot; <a href="#" data-cookie-settings>Cookievoorkeuren</a></span>
     </div>
   </div>
 </footer>

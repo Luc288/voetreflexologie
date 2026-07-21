@@ -12,12 +12,14 @@
 <meta property="og:locale" content="{{ .Site.Params.ogLocale }}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
 {{ block "head" . }}{{ end }}
-<link rel="stylesheet" href="{{ "style.css" | relURL }}">
+{{ $css := "style.css" }}{{ if eq .Site.Params.theme "medical" }}{{ $css = "style-medical.css" }}{{ end }}
+<link rel="stylesheet" href="{{ $css | relURL }}">
 </head>
 <body>
 {{ partial "header.html" . }}
 {{ block "main" . }}{{ end }}
 {{ partial "footer.html" . }}
 <script src="{{ "script.js" | relURL }}"></script>
+{{ partial "analytics.html" . }}
 </body>
 </html>

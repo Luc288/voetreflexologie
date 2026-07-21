@@ -1,16 +1,5 @@
 {{ define "head" }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
-  "name": "Voetreflexologie Martine Smet",
-  "address": {"@type":"PostalAddress","streetAddress":"Baron Leroystraat 144","addressLocality":"Deurne","postalCode":"2100","addressCountry":"BE"},
-  "geo": {"@type":"GeoCoordinates","latitude":51.2256551,"longitude":4.4723453},
-  "telephone": "+32498416080",
-  "email": "info@hand-en-voetreflexologie.be",
-  "url": "https://www.hand-en-voetreflexologie.be/contact/"
-}
-</script>
+{{ partial "schema-business.html" . }}
 {{ end }}
 
 {{ define "main" }}
@@ -28,7 +17,7 @@
     <div>
       <div class="info-row">
         <div class="ic">&#9742;</div>
-        <div><h4>Telefoon</h4><a href="{{ .Site.Params.phoneLink }}">{{ .Site.Params.phone }}</a></div>
+        <div><h4>Telefoon</h4><a href="{{ .Site.Params.phoneLink | safeURL }}">{{ .Site.Params.phone }}</a></div>
       </div>
       <div class="info-row">
         <div class="ic">&#9993;</div>
@@ -36,8 +25,8 @@
       </div>
       <div class="info-row">
         <div class="ic">&#9873;</div>
-        <div><h4>Adres</h4><p>Baron Leroystraat 144<br>2100 Deurne, Antwerpen</p>
-        <a href="https://www.google.be/maps/place/Baron+Leroystraat+144,+2100+Antwerpen/@51.2256584,4.4701566,17z" target="_blank" rel="noopener" style="color:var(--clay-deep);font-size:.92rem">Open in Google Maps &rarr;</a></div>
+        <div><h4>Adres</h4><p>{{ .Site.Params.street }}<br>{{ .Site.Params.postalCode }} {{ .Site.Params.locality }}, {{ .Site.Params.region }}</p>
+        <a href="https://www.google.be/maps/place/Baron+Leroystraat+144,+2100+Antwerpen/@51.2256584,4.4701566,17z" target="_blank" rel="noopener" class="maps-link">Open in Google Maps &rarr;</a></div>
       </div>
       <div class="info-row">
         <div class="ic">&#9201;</div>

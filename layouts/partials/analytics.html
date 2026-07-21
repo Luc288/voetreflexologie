@@ -1,0 +1,58 @@
+{{/*
+  Google Analytics 4 met toestemming (GDPR/ePrivacy).
+  - De banner toont zolang er geen keuze gemaakt is; de keuze wordt onthouden.
+  - GA wordt PAS geladen na "Accepteren" (geen cookies/verkeer vóór toestemming).
+  - GA laadt alleen in de productie-build, zodat lokaal testen niet meetelt.
+  - De banner zelf rendert ook lokaal, zodat je hem kunt zien en testen.
+*/}}
+{{- with .Site.Params.googleAnalytics -}}
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookietoestemming" hidden>
+  <div class="cookie-inner">
+    <p>Deze website gebruikt Google Analytics om anoniem bezoek te meten. Ga je akkoord? Je kunt je keuze later wijzigen via <em>Cookievoorkeuren</em> onderaan.</p>
+    <div class="cookie-actions">
+      <button type="button" id="cookie-accept" class="btn">Accepteren</button>
+      <button type="button" id="cookie-decline" class="btn btn-ghost">Weigeren</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var GA_ID = {{ . | jsonify }};
+  var PROD  = {{ if hugo.IsProduction }}true{{ else }}false{{ end }};
+  var KEY   = "cookie-consent";
+  var banner = document.getElementById("cookie-banner");
+
+  function loadGA(){
+    if (!PROD || window.__gaLoaded) return;          // niet lokaal, en maar één keer
+    window.__gaLoaded = true;
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ dataLayer.push(arguments); };
+    gtag("js", new Date());
+    gtag("config", GA_ID);
+  }
+
+  function get(){ try { return localStorage.getItem(KEY); } catch(e){ return null; } }
+  function set(v){ try { localStorage.setItem(KEY, v); } catch(e){} }
+
+  var choice = get();
+  if (choice === "granted") { loadGA(); }
+  else if (choice !== "denied" && banner) { banner.hidden = false; }
+
+  function decide(v){ set(v); if (banner) banner.hidden = true; if (v === "granted") loadGA(); }
+  var a = document.getElementById("cookie-accept");
+  var d = document.getElementById("cookie-decline");
+  if (a) a.addEventListener("click", function(){ decide("granted"); });
+  if (d) d.addEventListener("click", function(){ decide("denied"); });
+
+  // Heropenen via een link/knop met data-cookie-settings (bv. in de footer)
+  document.addEventListener("click", function(e){
+    var t = e.target.closest("[data-cookie-settings]");
+    if (t && banner){ e.preventDefault(); banner.hidden = false; }
+  });
+})();
+</script>
+{{- end -}}

@@ -5,14 +5,47 @@ disableKinds = ["taxonomy", "term", "RSS"]
 enableRobotsTXT = true
 
 [params]
+  # Uiterlijk:  ""        = warme / wellness-stijl  (static/style.css)
+  #             "medical" = klinische / medische stijl (static/style-medical.css)
+  theme = "medical"
   author = "Martine Smet"
-  phone = "0498 41 60 80"
-  phoneLink = "tel:0498416080"
-  phoneIntl = "+32498416080"
+
+  # --- NAP: ÉÉN bron van waarheid -----------------------------------------
+  # Deze velden voeden het LocalBusiness-schema, de footer én de contactpagina.
+  # Pas adres/telefoon hier aan en het verandert overal automatisch mee.
+  businessName = "Voetreflexologie Martine Smet"   # exact zoals op Google Bedrijfsprofiel
+  businessType = "HealthAndBeautyBusiness"
+  bizDescription = "Causale voetreflexologie en holistische behandelingen in Deurne, Antwerpen."
+  phone = "0498 41 60 80"          # weergave op de site
+  phoneLink = "tel:+32498416080"   # klikbare link (internationaal formaat)
+  phoneIntl = "+32498416080"       # voor schema.org
   email = "info@hand-en-voetreflexologie.be"
   street = "Baron Leroystraat 144"
-  city = "2100 Deurne, Antwerpen"
+  postalCode = "2100"
+  locality = "Deurne"
+  region = "Antwerpen"
+  country = "BE"
+  geoLat = 51.2256551
+  geoLng = 4.4723453
+  priceRange = "€€"
+  areaServed = ["Deurne", "Antwerpen", "Borgerhout", "Wijnegem"]
+  bevo = "BeVo – Beroepsvereniging van Reflexologen België"
+  logo = "https://www.hand-en-voetreflexologie.be/Portals/1/Logo%20voetreflexologie%20Martine%20Smet%20300%2088.png"
+
+  # Externe profielen (sameAs) — koppelt je website aan dezelfde entiteit elders. medical
+  # Belangrijk voor NAP-vertrouwen bij Google en AI. Vul de echte URL's in en
+  # haal de # weg. Google-link = de "Delen" → "Link kopiëren" van je profiel.
+  sameAs = [
+    # "https://maps.app.goo.gl/XXXXXXXX",     # Google Bedrijfsprofiel
+    # "https://www.facebook.com/XXXXXXXX",     # Facebook
+    # "https://www.instagram.com/XXXXXXXX",    # Instagram
+  ]
+
   ogLocale = "nl_BE"
+
+  # Google Analytics 4 — laadt enkel in de productie-build én pas na toestemming
+  # via de cookiebanner. Leeg laten ("") schakelt analytics + banner volledig uit.
+  googleAnalytics = "G-FQZGY8ZCE6"
 
 # Hoofdnavigatie
 [[menu.main]]
@@ -32,9 +65,13 @@ enableRobotsTXT = true
   pageRef = "/cursussen"
   weight = 4
 [[menu.main]]
+  name = "Veelgestelde vragen"
+  pageRef = "/faq"
+  weight = 5
+[[menu.main]]
   name = "Afspraak maken"
   pageRef = "/contact"
-  weight = 5
+  weight = 6
   [menu.main.params]
     button = true
 

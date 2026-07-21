@@ -1,0 +1,41 @@
+{{- /*
+  Herbruikbare afbeelding met Hugo-beeldverwerking → WebP (responsive).
+  Genereert een <picture> met WebP-srcset + JPEG-fallback, width/height
+  (tegen layout-shift) en lazy-loading.
+
+  Verwacht een dict:
+    src      (verplicht) pad in assets, bv. "images/voetreflexologie.jpg"
+    alt      (verplicht) alt-tekst
+    class    (optioneel) class op het <img>
+    loading  (optioneel) "lazy" (standaard) of "eager"
+    sizes    (optioneel) sizes-attribuut
+    widths   (optioneel) slice van breedtes, standaard 400 + 800
+*/ -}}
+{{- $alt := .alt | default "" -}}
+{{- $class := .class | default "" -}}
+{{- $loading := .loading | default "lazy" -}}
+{{- $sizes := .sizes | default "(max-width:900px) 100vw, 360px" -}}
+{{- $widths := .widths | default (slice 400 800) -}}
+{{- with resources.Get .src -}}
+  {{- $orig := . -}}
+  {{- $webp := slice -}}
+  {{- $jpg := slice -}}
+  {{- range $widths -}}
+    {{- if ge $orig.Width . -}}
+      {{- $w := $orig.Resize (printf "%dx webp q80" .) -}}
+      {{- $webp = $webp | append (printf "%s %dw" $w.RelPermalink .) -}}
+      {{- $j := $orig.Resize (printf "%dx jpg q82" .) -}}
+      {{- $jpg = $jpg | append (printf "%s %dw" $j.RelPermalink .) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $maxW := index $widths (sub (len $widths) 1) -}}
+  {{- $fallback := cond (ge $orig.Width $maxW) ($orig.Resize (printf "%dx jpg q82" $maxW)) $orig -}}
+  <picture>
+    <source type="image/webp" srcset="{{ delimit $webp ", " }}" sizes="{{ $sizes }}">
+    <img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $jpg ", " }}" sizes="{{ $sizes }}"
+         width="{{ $fallback.Width }}" height="{{ $fallback.Height }}" alt="{{ $alt }}"
+         loading="{{ $loading }}" decoding="async"{{ with $class }} class="{{ . }}"{{ end }}>
+  </picture>
+{{- else -}}
+  {{- warnf "img.html: bron niet gevonden in assets: %q" .src -}}
+{{- end -}}

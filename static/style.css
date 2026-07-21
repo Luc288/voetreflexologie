@@ -108,6 +108,7 @@ section{padding:96px 0}
 .feature.reverse .feature-visual{order:2}
 .feature-visual{aspect-ratio:4/3;border-radius:8px 8px 70px 8px;background:linear-gradient(150deg,#9aa67e,#5b6647);position:relative;overflow:hidden;box-shadow:var(--shadow)}
 .feature-visual span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:3.2rem;color:rgba(251,248,242,.55)}
+.feature-visual picture,.feature-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 35%}
 .feature-num{font-family:var(--display);font-size:1rem;color:var(--clay);letter-spacing:.1em;margin-bottom:10px;display:block}
 .feature h2{font-size:clamp(1.55rem,2.6vw,2.05rem);color:var(--olive);margin-bottom:14px}
 .feature p{color:var(--muted);margin-bottom:14px}
@@ -141,6 +142,7 @@ section{padding:96px 0}
 .course:hover{box-shadow:var(--shadow);border-color:var(--clay)}
 .course-visual{aspect-ratio:1;border-radius:6px 6px 50px 6px;background:linear-gradient(150deg,#9aa67e,#5b6647);position:relative;overflow:hidden}
 .course-visual span{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:2.4rem;color:rgba(251,248,242,.6)}
+.course-visual picture,.course-visual img{display:block;width:100%;height:100%;object-fit:cover}
 .course h3{font-size:1.32rem;color:var(--olive);margin-bottom:12px}
 .course p{color:var(--muted);font-size:.97rem;margin-bottom:16px}
 .course .when{font-size:.9rem;color:var(--olive-soft);margin-bottom:6px}
@@ -154,6 +156,7 @@ section{padding:96px 0}
 .info-row h4{font-family:var(--body);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--clay-deep);font-weight:600;margin-bottom:4px}
 .info-row p,.info-row a{color:var(--ink);font-size:1.02rem}
 .info-row a:hover{color:var(--clay-deep)}
+.info-row a.maps-link{color:var(--clay-deep);font-size:.92rem}
 .map-embed iframe{width:100%;height:340px;border:0;border-radius:8px;box-shadow:var(--shadow)}
 .note{background:var(--sand);border-left:3px solid var(--clay);padding:18px 22px;border-radius:0 6px 6px 0;font-size:.94rem;color:var(--muted);margin-top:28px}
 .note b{color:var(--olive)}
@@ -186,6 +189,17 @@ footer li{margin-bottom:10px;font-size:.94rem}
 .faq-item .faq-body p{color:var(--muted);margin-bottom:10px}
 .faq-item .faq-body p:last-child{margin-bottom:0}
 .faq-note{font-size:.86rem;color:var(--clay-deep);font-style:italic;background:var(--sand);border-radius:6px;padding:8px 12px}
+
+/* cookie consent banner */
+#cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:560px;margin:0 auto;background:var(--cream);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);animation:rise .4s ease both}
+#cookie-banner .cookie-inner{padding:20px 22px}
+#cookie-banner p{font-size:.92rem;color:var(--muted);margin-bottom:14px}
+#cookie-banner p em{font-style:normal;color:var(--olive);font-weight:500}
+#cookie-banner .cookie-actions{display:flex;gap:10px;flex-wrap:wrap}
+#cookie-banner .btn{cursor:pointer;border:none;font-family:inherit}
+#cookie-banner .btn-ghost{background:transparent;color:var(--olive-soft);border:1px solid var(--line)}
+#cookie-banner .btn-ghost:hover{background:var(--sand)}
+.foot-bot a[data-cookie-settings]:hover{color:#fff}
 
 @media(max-width:900px){
   .hero-grid,.intro-grid,.about-grid,.ben-grid,.treat-grid,.foot-grid,.feature,.over-grid,.course,.contact-grid{grid-template-columns:1fr}

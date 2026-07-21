@@ -1,28 +1,5 @@
 {{ define "head" }}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HealthAndBeautyBusiness",
-  "name": "Voetreflexologie Martine Smet",
-  "image": "https://www.hand-en-voetreflexologie.be/Portals/1/Logo%20voetreflexologie%20Martine%20Smet%20300%2088.png",
-  "description": "Causale voetreflexologie en holistische behandelingen in Deurne, Antwerpen.",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Baron Leroystraat 144",
-    "addressLocality": "Deurne",
-    "addressRegion": "Antwerpen",
-    "postalCode": "2100",
-    "addressCountry": "BE"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": 51.2256551, "longitude": 4.4723453 },
-  "telephone": "+32498416080",
-  "email": "info@hand-en-voetreflexologie.be",
-  "url": "https://www.hand-en-voetreflexologie.be/",
-  "priceRange": "€€",
-  "memberOf": { "@type": "Organization", "name": "BeVo – Beroepsvereniging van Reflexologen België" },
-  "areaServed": ["Deurne", "Antwerpen", "Borgerhout", "Wijnegem"]
-}
-</script>
+{{ partial "schema-business.html" . }}
 {{ end }}
 
 {{ define "main" }}
@@ -30,9 +7,9 @@
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-text">
-        <p class="eyebrow">Holistische voetreflexologie &middot; Deurne, Antwerpen</p>
-        <h1>Kom tot rust, <em>van de grond af</em> aan.</h1>
-        <p>Causale voetreflexologie en zachte holistische behandelingen die je zelfhelend vermogen activeren &mdash; in het hart van Deurne.</p>
+        <p class="eyebrow">Voetreflexologie &middot; Deurne, Antwerpen</p>
+        <h1>Kom tot rust, <em>in je hele lichaam</em>.</h1>
+        <p>Voetreflexologie en zachte holistische behandelingen die je zelfhelend vermogen activeren &mdash; in het hart van Deurne.</p>
         <div class="hero-cta">
           <a href="{{ "/contact" | relLangURL }}" class="btn">Een afspraak maken</a>
           <a href="{{ "/aanbod" | relLangURL }}" class="btn btn-clay">Bekijk de behandelingen</a>
@@ -91,7 +68,7 @@
       <p>Elke methode biedt een unieke weg om spanning los te laten, balans te herstellen en het zelfhelend vermogen te activeren.</p>
     </div>
     <div class="treat-grid">
-      <div class="treat"><div class="num">01</div><div><h3>Causale voetreflexologie</h3><p>Detecteert en herstelt bewegingsverlies van organen en koppelt emotionele hersenzones aan de organen.</p><span class="tag">Holistisch &middot; diepgaand</span></div></div>
+      <div class="treat"><div class="num">01</div><div><h3>Causale voetreflexologie</h3><p>Detecteert en herstelt bewegingsverlies van organen en koppelt emotionele hersenzones aan de organen.</p><span class="tag">Diepgaand</span></div></div>
       <div class="treat"><div class="num">02</div><div><h3>Egyptische voetmassage</h3><p>Een sessie van ca. 2u met wisselbaden en massage van het volledige onderbeen.</p><span class="tag">&plusmn;2 uur &middot; ontspannend</span></div></div>
       <div class="treat"><div class="num">03</div><div><h3>Psychozone Harmonisering</h3><p>Zachte techniek met acupressuur, ondersteunend bij stress, burn-out en emotionele klachten.</p><span class="tag">Emotioneel &middot; zacht</span></div></div>
       <div class="treat"><div class="num">04</div><div><h3>Metamorfosemassage</h3><p>Zachte techniek op de wervelkolomzones van voeten, handen en hoofd.</p><span class="tag">Spirituele groei</span></div></div>
@@ -107,7 +84,7 @@
       <p class="eyebrow">Over Martine Smet</p>
       <h2>Meer dan 25 jaar werken vanuit aandacht en aanwezigheid</h2>
       <p>In 1995 begon ik als professionele voetverzorgster. Een persoonlijke zoektocht bracht me bij voetreflexologie &mdash; een ervaring die mijn leven en werk diepgaand veranderde.</p>
-      <p>Ik geloof in behandelen vanuit 'doen zonder doen': aanwezig zijn, ruimte cre&euml;ren en het lichaam laten spreken.</p>
+      <p>Ik werk vanuit rust en aandacht: ik geef je lichaam de ruimte om zelf te reageren en spanning los te laten.</p>
       <a href="{{ "/over" | relLangURL }}" class="badge">&#11041; Lees mijn verhaal &rarr;</a>
     </div>
   </div>

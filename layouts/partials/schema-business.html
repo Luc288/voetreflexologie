@@ -1,0 +1,33 @@
+{{/*
+  Centraal LocalBusiness-schema (JSON-LD), gegenereerd uit hugo.toml [params].
+  Eén bron van waarheid voor NAP — voorkomt dat adres/telefoon uit elkaar lopen.
+  Optionele velden worden alleen toegevoegd als ze ingevuld zijn.
+*/}}
+{{- $p := site.Params -}}
+{{- $biz := dict
+    "@context" "https://schema.org"
+    "@type" (default "LocalBusiness" $p.businessType)
+    "@id" (printf "%s#business" site.BaseURL)
+    "name" (default site.Title $p.businessName)
+    "url" site.BaseURL
+    "telephone" $p.phoneIntl
+    "email" $p.email
+    "priceRange" $p.priceRange
+    "address" (dict
+        "@type" "PostalAddress"
+        "streetAddress" $p.street
+        "postalCode" $p.postalCode
+        "addressLocality" $p.locality
+        "addressRegion" $p.region
+        "addressCountry" $p.country)
+    "geo" (dict
+        "@type" "GeoCoordinates"
+        "latitude" $p.geoLat
+        "longitude" $p.geoLng)
+-}}
+{{- with $p.bizDescription }}{{ $biz = merge $biz (dict "description" .) }}{{ end -}}
+{{- with $p.logo }}{{ $biz = merge $biz (dict "image" .) }}{{ end -}}
+{{- with $p.areaServed }}{{ $biz = merge $biz (dict "areaServed" .) }}{{ end -}}
+{{- with $p.bevo }}{{ $biz = merge $biz (dict "memberOf" (dict "@type" "Organization" "name" .)) }}{{ end -}}
+{{- if $p.sameAs }}{{ $biz = merge $biz (dict "sameAs" $p.sameAs) }}{{ end -}}
+<script type="application/ld+json">{{ $biz | jsonify | safeJS }}</script>
