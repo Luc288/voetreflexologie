@@ -1,6 +1,6 @@
 baseURL = "https://www.hand-en-voetreflexologie.be/"
 locale = "nl-be"
-title = "Voetreflexologie Martine Smet"
+title = "Hand en voetreflexologie Martine Smet"
 disableKinds = ["taxonomy", "term", "RSS"]
 enableRobotsTXT = true
 
@@ -19,17 +19,20 @@ enableRobotsTXT = true
   phone = "0498 41 60 80"          # weergave op de site
   phoneLink = "tel:+32498416080"   # klikbare link (internationaal formaat)
   phoneIntl = "+32498416080"       # voor schema.org
-  email = "info@hand-en-voetreflexologie.be"
+  email = "martine.smet@hand-en-voetreflexologie.be"
   street = "Baron Leroystraat 144"
   postalCode = "2100"
-  locality = "Deurne"
-  region = "Antwerpen"
+  locality = "Antwerpen"   # officiële stad (= Google Bedrijfsprofiel)
+  district = "Deurne"      # district, wordt getoond als "2100 Antwerpen (Deurne)"
+  region = "Antwerpen"     # provincie (schema.org addressRegion)
   country = "BE"
   geoLat = 51.2256551
   geoLng = 4.4723453
   priceRange = "€€"
   areaServed = ["Deurne", "Antwerpen", "Borgerhout", "Wijnegem"]
   bevo = "BeVo – Beroepsvereniging van Reflexologen België"
+  bevoUrl = "https://bevo-belgie.org/"                       # organisatie (schema.org)
+  bevoMembersUrl = "https://bevo-belgie.org/erkende-leden/"  # ledenlijst — Martine staat hier
   logo = "https://www.hand-en-voetreflexologie.be/Portals/1/Logo%20voetreflexologie%20Martine%20Smet%20300%2088.png"
 
   # Externe profielen (sameAs) — koppelt je website aan dezelfde entiteit elders. medical

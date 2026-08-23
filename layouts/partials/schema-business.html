@@ -28,6 +28,6 @@
 {{- with $p.bizDescription }}{{ $biz = merge $biz (dict "description" .) }}{{ end -}}
 {{- with $p.logo }}{{ $biz = merge $biz (dict "image" .) }}{{ end -}}
 {{- with $p.areaServed }}{{ $biz = merge $biz (dict "areaServed" .) }}{{ end -}}
-{{- with $p.bevo }}{{ $biz = merge $biz (dict "memberOf" (dict "@type" "Organization" "name" .)) }}{{ end -}}
+{{- if $p.bevo }}{{ $org := dict "@type" "Organization" "name" $p.bevo }}{{ with $p.bevoUrl }}{{ $org = merge $org (dict "url" .) }}{{ end }}{{ $biz = merge $biz (dict "memberOf" $org) }}{{ end -}}
 {{- if $p.sameAs }}{{ $biz = merge $biz (dict "sameAs" $p.sameAs) }}{{ end -}}
 <script type="application/ld+json">{{ $biz | jsonify | safeJS }}</script>

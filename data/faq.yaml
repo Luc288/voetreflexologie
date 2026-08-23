@@ -11,15 +11,18 @@
   antwoord: "<p>Een eerste sessie start met een uitgebreide anamnese: we overlopen samen je gezondheid, je klachten en wat je verwacht. Zo stemmen we de behandeling op jou af en gaan we na of er geen contra-indicaties zijn. Daarna volgt de behandeling zelf.</p>"
 
 - vraag: "Hoe lang duurt een sessie?"
-  antwoord: "<p>Dat hangt af van de behandeling. Een Egyptische voetmassage duurt bijvoorbeeld ongeveer twee uur; een reguliere sessie voetreflexologie is korter.</p>"
-  note: "Exacte duur van een standaardsessie hier aan te vullen."
+  antwoord: "<p> Dat hangt af van de gekozen behandeling. Een Egyptische voetmassage duurt
+  ongeveer twee uur, terwijl een klassieke voetreflexologiesessie doorgaans
+  tussen 1 uur 15 en 1 uur 30 duurt.</p>"
 
 - vraag: "Wat kost een behandeling?"
-  antwoord: "<p>Je krijgt vooraf altijd duidelijkheid over de prijs van je behandeling, zodat je nooit voor verrassingen staat.</p>"
-  note: "Tarieven per behandeling hier aan te vullen."
+  antwoord: <p>
+    Je krijgt vooraf altijd duidelijkheid over de prijs van je behandeling,
+    zodat je nooit voor verrassingen staat.</p>
+  note: "Voetreflex: 60€ — Egyptische voetmassage: 90€."
 
 - vraag: "Betaalt mijn mutualiteit een deel terug?"
-  antwoord: "<p>Veel mutualiteiten betalen een deel van de sessies terug wanneer je therapeut is aangesloten bij een erkende beroepsvereniging. Martine is lid van BeVo. Vraag bij je eigen mutualiteit na welke voorwaarden en bedragen bij jou gelden.</p>"
+  antwoord: "<p>Vraag bij je eigen mutualiteit na welke voorwaarden en bedragen bij jou gelden.</p>"
 
 - vraag: "Hoeveel sessies heb ik nodig?"
   antwoord: "<p>Dat verschilt van persoon tot persoon en hangt af van je situatie en je doel. Sommige mensen komen eenmalig voor ontspanning, anderen kiezen voor een reeks. We bekijken het samen, zonder verplichting.</p>"
@@ -28,4 +31,4 @@
   antwoord: "<p>Voetreflexologie is geschikt voor jong en oud. Voor specifieke situaties, zoals een zwangerschap of een bestaande aandoening, stemmen we de aanpak af tijdens de anamnese. Bij twijfel overleg je dit best ook met je arts.</p>"
 
 - vraag: "Hoe maak ik een afspraak?"
-  antwoord: "<p>Consultatie is steeds op afspraak. Je belt naar 0498 41 60 80 of mailt naar info@hand-en-voetreflexologie.be, en we plannen samen een moment. De praktijk ligt in de Baron Leroystraat 144 in Deurne.</p>"
+  antwoord: "<p>Consultatie is steeds op afspraak. Je belt naar 0498 41 60 80 of mailt naar martine.smet@hand-en-voetreflexologie.be, en we plannen samen een moment. De praktijk ligt in de Baron Leroystraat 144 2100 Antwerpen (Deurne).</p>"

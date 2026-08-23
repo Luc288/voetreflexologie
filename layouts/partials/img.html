@@ -29,7 +29,8 @@
     {{- end -}}
   {{- end -}}
   {{- $maxW := index $widths (sub (len $widths) 1) -}}
-  {{- $fallback := cond (ge $orig.Width $maxW) ($orig.Resize (printf "%dx jpg q82" $maxW)) $orig -}}
+  {{- $fw := cond (lt $orig.Width $maxW) $orig.Width $maxW -}}
+  {{- $fallback := $orig.Resize (printf "%dx jpg q82" $fw) -}}
   <picture>
     <source type="image/webp" srcset="{{ delimit $webp ", " }}" sizes="{{ $sizes }}">
     <img src="{{ $fallback.RelPermalink }}" srcset="{{ delimit $jpg ", " }}" sizes="{{ $sizes }}"
