@@ -4,6 +4,11 @@
       <div>
         <h4>Voetreflexologie Martine Smet</h4>
         <p style="font-size:.94rem;max-width:34ch;color:#a8a499">Holistische voetreflexologie in Deurne, Antwerpen. Ontspan, herstel en activeer je zelfhelend vermogen.</p>
+        {{ $bevoUrl := .Site.Params.bevoMembersUrl }}
+        {{ with resources.Get "images/bevo-logo.webp" }}{{ $l := .Resize "130x webp q90" }}
+        <a class="foot-bevo" href="{{ $bevoUrl }}" target="_blank" rel="noopener" title="Erkend lid van BeVo">
+          <img src="{{ $l.RelPermalink }}" width="{{ $l.Width }}" height="{{ $l.Height }}" alt="Logo BeVo &mdash; Beroepsvereniging van Reflexologen" loading="lazy">
+        </a>{{ end }}
       </div>
       <div>
         <h5>Contact</h5>
@@ -19,6 +24,7 @@
           <li><a href="{{ "/aanbod" | relLangURL }}">Behandelingen</a></li>
           <li><a href="{{ "/over" | relLangURL }}">Over Martine</a></li>
           <li><a href="{{ "/cursussen" | relLangURL }}">Cursussen &amp; workshops</a></li>
+          <li><a href="{{ "/cadeaubon" | relLangURL }}">Cadeaubon</a></li>
           <li><a href="{{ "/faq" | relLangURL }}">Veelgestelde vragen</a></li>
           <li><a href="{{ "/contact" | relLangURL }}">Contact &amp; afspraak</a></li>
         </ul>

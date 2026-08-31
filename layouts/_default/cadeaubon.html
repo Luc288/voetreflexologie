@@ -1,0 +1,56 @@
+{{ define "main" }}
+<section class="page-hero">
+  <div class="wrap">
+    <p class="crumb"><a href="{{ "/" | relLangURL }}">Home</a> &rsaquo; Cadeaubon</p>
+    <p class="eyebrow">Cadeaubon</p>
+    <h1>Geef <em>rust</em> cadeau</h1>
+    <p class="lead">Verras iemand met een moment van ontspanning. Een cadeaubon voor voetreflexologie is een fijn geschenk &mdash; voor een verjaardag, de feestdagen of gewoon als attentie.</p>
+  </div>
+</section>
+
+<section style="padding-top:50px">
+  <div class="wrap">
+    <div class="treat-grid">
+      <div class="treat">
+        <div class="num">&euro;60</div>
+        <div>
+          <h3>Voetreflexologie</h3>
+          <p>Een volledige sessie causale voetreflexologie: diepe ontspanning, met aandacht voor de hele mens.</p>
+          <span class="tag">Cadeaubon</span>
+        </div>
+      </div>
+      <div class="treat">
+        <div class="num">&euro;90</div>
+        <div>
+          <h3>Egyptische voetmassage</h3>
+          <p>Een uitgebreide sessie van ongeveer twee uur met wisselbaden en massage van het volledige onderbeen.</p>
+          <span class="tag">Cadeaubon</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head" style="margin-top:58px;margin-bottom:28px">
+      <p class="eyebrow">Bestellen</p>
+      <h2>Zo bestel je</h2>
+      <p>De cadeaubon wordt op papier gemaakt, klaar om te geven.
+	  Je bestelt eenvoudig via telefoon of e-mail. We spreken samen af hoe je de bon ontvangt en betaalt.</p>
+    </div>
+    <div class="info-row">
+      <div class="ic">&#9742;</div>
+      <div><h4>Telefoon</h4><a href="{{ .Site.Params.phoneLink | safeURL }}">{{ .Site.Params.phone }}</a></div>
+    </div>
+    <div class="info-row">
+      <div class="ic">&#9993;</div>
+      <div><h4>E-mail</h4><a href="mailto:{{ .Site.Params.email }}?subject=Cadeaubon%20bestellen">{{ .Site.Params.email }}</a></div>
+    </div>
+  </div>
+</section>
+
+{{ partial "cta.html" (dict
+  "eyebrow" "Cadeaubon"
+  "title" "Zin om te bestellen?"
+  "text" "Bel of mail gerust &mdash; we maken je cadeaubon in orde."
+  "btnText" (printf "Bel %s" .Site.Params.phone)
+  "btnHref" .Site.Params.phoneLink
+) }}
+{{ end }}

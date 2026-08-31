@@ -15,7 +15,7 @@
           <a href="{{ "/aanbod" | relLangURL }}" class="btn btn-clay">Bekijk de behandelingen</a>
         </div>
       </div>
-      <div class="hero-art"><div class="circle"><span class="foot">&#9763;</span></div></div>
+      <div class="hero-art">{{ partial "img.html" (dict "src" "images/behandelkamer.jpg" "alt" "De behandelkamer van Voetreflexologie Martine Smet in Deurne, met behandeltafel en reflexzonekaart" "widths" (slice 600 1200) "sizes" "(max-width:900px) 100vw, 560px" "loading" "eager") }}</div>
     </div>
   </div>
 </section>
@@ -30,7 +30,7 @@
 
 <section id="aanpak">
   <div class="wrap intro-grid">
-    <div class="intro-visual"></div>
+    <div class="intro-visual">{{ partial "img.html" (dict "src" "images/intro-oorzaak.jpg" "alt" "Illustratie van een boom met wortels — verwijst naar het zoeken naar de oorzaak, niet enkel het symptoom" "widths" (slice 400 800) "sizes" "(max-width:900px) 100vw, 460px") }}</div>
     <div class="intro-text">
       <p class="eyebrow">Waarom voetreflexologie?</p>
       <h2>We zoeken niet naar het symptoom, maar naar de oorzaak.</h2>
@@ -77,9 +77,19 @@
   </div>
 </section>
 
+<section class="giftcallout">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Cadeautip</p>
+      <h2>Geef een moment van rust cadeau</h2>
+    </div>
+    <a href="{{ "/cadeaubon" | relLangURL }}" class="btn">Bekijk de cadeaubon</a>
+  </div>
+</section>
+
 <section class="about">
   <div class="wrap about-grid">
-    <div class="about-photo"></div>
+    <div class="about-photo">{{ partial "img.html" (dict "src" "images/martine-smet.jpg" "alt" "Martine Smet, reflexologe in Deurne (Antwerpen)" "widths" (slice 480 960) "sizes" "(max-width:900px) 100vw, 380px") }}</div>
     <div>
       <p class="eyebrow">Over Martine Smet</p>
       <h2>Meer dan 15 jaar werken vanuit aandacht en aanwezigheid</h2>

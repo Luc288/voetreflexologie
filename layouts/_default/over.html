@@ -13,6 +13,7 @@
     "knowsAbout" (slice "Voetreflexologie" "Causale voetreflexologie" "Reflexologie" "Ontspanning en stressreductie")
 -}}
 {{- if $p.bevo }}{{ $org := dict "@type" "Organization" "name" $p.bevo }}{{ with $p.bevoUrl }}{{ $org = merge $org (dict "url" .) }}{{ end }}{{ $person = merge $person (dict "memberOf" $org) }}{{ end -}}
+{{- with resources.Get "images/martine-smet.jpg" }}{{ $img := .Resize "800x jpg q85" }}{{ $person = merge $person (dict "image" $img.Permalink) }}{{ end -}}
 {{- $breadcrumbId := printf "%s#breadcrumb" .Permalink -}}
 {{- $breadcrumb := dict
     "@type" "BreadcrumbList"
@@ -38,15 +39,15 @@
 <section class="page-hero">
   <div class="wrap">
     <p class="crumb"><a href="{{ "/" | relLangURL }}">Home</a> &rsaquo; Over Martine</p>
-    <p class="eyebrow">Over Martine Smet</p>
+    <p class="eyebrow">Over Martine Smet – Voetreflexologe in Deurne (Antwerpen)</p>
     <h1>Voetreflexologie vanuit <em>aandacht</em> en aanwezigheid</h1>
-    <p class="lead">Al meer dan 25 jaar begeleid ik mensen met voetreflexologie in Deurne. Een korte kennismaking met mijn weg en mijn manier van werken.</p>
+    <p class="lead">Al meer dan 15 jaar begeleid ik mensen met voetreflexologie in Deurne. Ik ben erkend reflexologe gespecialiseerd in causale en holistische voetreflexologie.</p>
   </div>
 </section>
 
 <section style="padding-top:50px">
   <div class="wrap over-grid">
-    <div class="over-photo"></div>
+    <div class="over-photo">{{ partial "img.html" (dict "src" "images/martine-smet.jpg" "alt" "Martine Smet, erkend reflexologe in Deurne (Antwerpen)" "widths" (slice 480 960) "sizes" "(max-width:900px) 300px, 360px") }}</div>
     <div class="prose">
       <p>In 1995 begon ik aan een nieuw hoofdstuk als professionele voetverzorgster. Enkele jaren later bracht een persoonlijke zoektocht me in contact met voetreflexologie &mdash; een ervaring die mijn leven en mijn werk diepgaand veranderde.</p>
       <p>Gefascineerd door de kracht van reflexologie volgde ik een tweejarige opleiding aan het Oost West Centrum, die de basis vormde voor mijn verdere groei en specialisatie.</p>
@@ -54,17 +55,20 @@
 
       <h2>Mijn specialisaties</h2>
       <ul class="spec-list">
-        <li><b>Causale voetreflexologie</b> &mdash; legt de link tussen emotionele hersenzones en de organen.</li>
-        <li><b>Egyptische voetmassage</b> &mdash; met wisselbaden en een diepe doorstroming.</li>
-        <li><b>Psychozone harmonisering</b> &mdash; voor emotionele en psychische ondersteuning.</li>
-        <li><b>Metamorfosemassage</b> &mdash; zachte techniek op voeten, handen en hoofd.</li>
-       
+        <li><a href="{{ "/aanbod" | relLangURL }}#causale"><b>Causale voetreflexologie</b></a> &mdash; legt de link tussen emotionele hersenzones en de organen.</li>
+        <li><a href="{{ "/aanbod" | relLangURL }}#egyptische"><b>Egyptische voetmassage</b></a> &mdash; met wisselbaden en een diepe doorstroming.</li>
+        <li><a href="{{ "/aanbod" | relLangURL }}#psychozone"><b>Psychozone harmonisering</b></a> &mdash; voor emotionele en psychische ondersteuning.</li>
+        <li><a href="{{ "/aanbod" | relLangURL }}#metamorfose"><b>Metamorfosemassage</b></a> &mdash; zachte techniek op voeten, handen en hoofd.</li>
       </ul>
 
       <h2>Rust en aandacht als basis</h2>
-      <p>Ik werk rustig en aandachtig: ik geef je lichaam de ruimte om zelf te reageren en spanning los te laten.</p>
+      <p>Ik werk rustig en aandachtig: ik geef je lichaam de ruimte om zelf te reageren en spanning los te laten. Samen met jou bespreek ik wat nodig en gewenst is.</p>
       <p>Als lid van <a href="{{ .Site.Params.bevoMembersUrl }}" target="_blank" rel="noopener">BeVo</a>, de beroepsvereniging van reflexologen in Belgi&euml;, blijf ik me voortdurend bijscholen om mijn cli&euml;nten de best mogelijke begeleiding te bieden.</p>
       <a class="badge-inline" href="{{ .Site.Params.bevoMembersUrl }}" target="_blank" rel="noopener">&#11041; Lid van BeVo &mdash; Beroepsvereniging van Reflexologen Belgi&euml;</a>
+      <a class="cert" href="{{ .Site.Params.bevoMembersUrl }}" target="_blank" rel="noopener">
+        {{ partial "img.html" (dict "src" "images/bevo-certificaat-2026.png" "alt" "BeVo-certificaat van uitmuntendheid 2026 — Martine Smet" "widths" (slice 400) "sizes" "(max-width:900px) 100vw, 360px") }}
+        <span class="cert-cap">Erkend professioneel reflexoloog &mdash; BeVo 2026</span>
+      </a>
     </div>
   </div>
 </section>
