@@ -17,6 +17,57 @@
 [context.branch-deploy.environment]
   HUGO_ENV = "preview"
 
+# --- 301-redirects van de oude .be-site (SEO/linkwaarde behouden) ---
+# Oude DNN-URL's (met en zonder nl-nl/ taalprefix) naar de nieuwe pagina's.
+[[redirects]]
+  from = "/voetreflexologie"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/nl-nl/voetreflexologie"
+  to = "/"
+  status = 301
+[[redirects]]
+  from = "/nl-nl"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/Aanbod"
+  to = "/aanbod/"
+  status = 301
+[[redirects]]
+  from = "/nl-nl/Aanbod"
+  to = "/aanbod/"
+  status = 301
+
+[[redirects]]
+  from = "/Martine-Smet"
+  to = "/over/"
+  status = 301
+[[redirects]]
+  from = "/nl-nl/Martine-Smet"
+  to = "/over/"
+  status = 301
+
+[[redirects]]
+  from = "/Cursus-work-shops"
+  to = "/cursussen/"
+  status = 301
+[[redirects]]
+  from = "/nl-nl/Cursus-work-shops"
+  to = "/cursussen/"
+  status = 301
+
+[[redirects]]
+  from = "/Contact"
+  to = "/contact/"
+  status = 301
+[[redirects]]
+  from = "/nl-nl/Contact"
+  to = "/contact/"
+  status = 301
+
 # Nette 404-pagina
 [[redirects]]
   from = "/*"
