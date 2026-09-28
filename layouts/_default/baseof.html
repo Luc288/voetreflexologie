@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="{{ "favicon.ico" | relURL }}" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "apple-touch-icon.png" | relURL }}">
+<link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
 <title>{{ if .Params.metaTitle }}{{ .Params.metaTitle }}{{ else }}{{ .Title }}{{ end }}</title>
 <meta name="description" content="{{ .Description }}">
 <link rel="canonical" href="{{ .Permalink }}">
